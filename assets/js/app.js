@@ -89,14 +89,15 @@ d3.csv("assets/data/data.csv")
 
     chartGroup.append("text")
     .style("text-anchor", "middle")
-    .style("font-size", "11px")
-    .style("fill", "white")
+    .style("font-size", "8px")
+    .style("fill", "black")
+    .style("font-weight","bold")
     .selectAll("tspan")
     .data(data)
     .enter()
     .append("tspan")
-        .attr("x", d => xLinearScale(d.poverty - 0))
-        .attr("y", d => yLinearScale(d.healthcare - 0.2))
+        .attr("x", d => xLinearScale(d.poverty))
+        .attr("y", d => yLinearScale(d.healthcare - 0.1))
         .text(function(data){return data.abbr});
 
     // Create axes labels
